@@ -23,4 +23,7 @@ Project Youtube API to learning React with Redux.
 npx creat-reac-app name-project
 yarn add semantic-ui-react
 yarn add youtube-api-v3-search
+yarn add redux
+yarn add redux-thunk
+yarn add redux-logger
 ```
