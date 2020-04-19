@@ -15,10 +15,12 @@ Project Youtube API to learning React with Redux.
 - React JS
 - Redux
 - Semantic UI React (frontend library)
+- Youtube API V3
 
 ### Installing
 
 ```
 npx creat-reac-app name-project
 yarn add semantic-ui-react
+yarn add youtube-api-v3-search
 ```
