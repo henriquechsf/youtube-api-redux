@@ -26,5 +26,7 @@ export default function busca(state = INITIAL_STATE, action) {
                 carregando: false,
                 erro: true
             }
+
+        default: return state
     }
 }
