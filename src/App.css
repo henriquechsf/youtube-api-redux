@@ -13,7 +13,7 @@
 
 .video-player {
   grid-area: video-player;
-  background: blue;
+  background: #f0e68c;
 }
 
 .video-list {
@@ -21,3 +21,15 @@
   background: #FFFACD;
   padding: 15px;
 }
+
+.video-titulo {
+  font-weight: 600;
+  color: #468284;
+  padding: 10px;
+}
+
+.video-descricao {
+  padding: 10px;
+  color: #0000cd;
+}
+
