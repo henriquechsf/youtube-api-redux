@@ -6,6 +6,13 @@ import { buscaVideo } from '../store/actions/buscaVideo'
 
 class SearchBar extends Component {
 
+    constructor(props) {
+        super(props)
+
+        // ao carregar o componente já busca algum conteúdo
+        this.props.buscaVideo('React and Redux')
+    }
+
     pesquisaTermo = e => {
         // captura o valor digitado no input
         if (e.keyCode === 13) {
