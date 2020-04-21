@@ -1,25 +1,41 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { List, Image } from 'semantic-ui-react'
 
-const VideoList = props => {
-    return (
+class VideoList extends Component {
 
-        <div className="video-list">
+    renderVideo(video) {
+        return (
             <List animated verticalAlign="middle">
                 <List.Item>
-                    <Image avatar src='' />
+                    <Image src={video.snippet.thumbnails.default.url} />
                     <List.Content>
-                        <List.Header>Título do Video</List.Header>
+                        <List.Header>{video.snippet.title}</List.Header>
                     </List.Content>
                 </List.Item>
             </List>
+        )
+    }
 
-            <p>{JSON.stringify(props)}</p>
-        </div>
+    render() {
+        return (
 
-    )
+            <div className="video-list">
+                {
+                    this.props.videos.map(video => {
+                        console.log("Meu video", video)
+                        return this.renderVideo(video)
+                    })
+                }
+
+                {/**teste 
+                <p>{JSON.stringify(this.props)}</p>
+                */}
+            </div>
+
+        )
+    }
 }
 
 // traz o state da store(global) para o componente
