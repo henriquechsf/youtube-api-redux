@@ -35,6 +35,7 @@ export const buscaVideoErro = () => {
     }
 }
 
+// action assincrona - busca na API
 export const buscaVideo = (termo) => {
     return dispatch => {
         dispatch(buscaVideoInicio())
