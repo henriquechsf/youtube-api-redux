@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+// ao clicar no video chamar esta action
+import { reproduzVideo } from '../store/actions/reproduzVideo'
+
 import { List, Image, Dimmer, Loader } from 'semantic-ui-react'
 
 class VideoList extends Component {
@@ -8,7 +11,7 @@ class VideoList extends Component {
     renderVideo(video) {
         return (
             <List animated verticalAlign="middle" key={video.etag}>
-                <List.Item>
+                <List.Item onClick={() => this.props.reproduz(video)}>
                     <Image src={video.snippet.thumbnails.default.url} />
                     <List.Content>
                         <List.Header>{video.snippet.title}</List.Header>
@@ -47,6 +50,13 @@ class VideoList extends Component {
     }
 }
 
+// dispara a acao de reproduzir o video
+const mapDispatchToProps = (dispatch) => {
+    return {
+        reproduz: (video) => dispatch(reproduzVideo(video))
+    }
+}
+
 // traz o state da store(global) para o componente
 const mapStateToProps = (state) => {
     return {
@@ -58,4 +68,4 @@ const mapStateToProps = (state) => {
 
 // connect usado para conectar o component ao redux
 // com isso o componente tem acesso ao estado da aplicação
-export default connect(mapStateToProps, null)(VideoList);
+export default connect(mapStateToProps, mapDispatchToProps)(VideoList);
